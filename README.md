@@ -1,35 +1,35 @@
-# 📊 Análise Econométrica — Consumo de Diesel × PIB do Agronegócio Brasileiro
+# Análise Econométrica — Consumo de diesel × PIB do agronegócio brasileiro
 
 Trabalho de econometria que investiga a relação de longo prazo entre o **consumo nacional de diesel** e o **PIB do agronegócio** (valor adicionado, metodologia CEPEA/Esalq-USP) no Brasil, para o período de **1996 a 2025**.
 
-## 🎯 Objetivo
+## Objetivo
 
-Quantificar, por meio de regressão linear simples (MQO), como o crescimento real do agronegócio brasileiro se relaciona com a demanda nacional por diesel (principal combustível da cadeia logística e produtiva agrícola).
+Quantificar, por meio de regressão linear simples, como o crescimento real do agronegócio brasileiro se relaciona com a demanda nacional por diesel (principal combustível da cadeia logística e produtiva agrícola).
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 projeto-econometria/
-├── analise_econometrica.py    # Único script de código (executa a análise, plota gráficos e gera o Word)
-├── dados_econometria.csv      # Base de dados consolidada e real (30 observações, 1996-2025)
-├── trabalho_econometria.md    # Relatório completo
-└── graficos/                  # Pasta com os gráficos atualizados gerados automaticamente
+├── analise_econometrica.py    
+├── dados_econometria.csv      
+├── trabalho_econometria.md    
+└── graficos/                  
     ├── 01_dispersao_diesel_pib.png
     ├── 02_regressao_simples.png
     ├── 03_residuos_regressao_simples.png
     └── 04_serie_temporal_diesel_pib.png
 ```
 
-## 📈 Modelo Estimado
+## Modelo Estimado
 
-### Regressão Linear Simples (MQO)
+### Regressão Linear Simples
 ```
 consumo_diesel = -8.155,09 + 24,41 × pib_agro
 R² = 0,4307 (43,07%)  |  p-valor = 8,21 × 10⁻⁵
 ```
-*   **Interpretação:** Para cada aumento de R$ 1 bilhão no PIB real do agronegócio (valores deflacionados para dez/2025), o consumo nacional de diesel aumenta em aproximadamente **24,41 mil m³ por ano**.
+*   Para cada aumento de R$ 1 bilhão no PIB real do agronegócio (valores deflacionados para dez/2025), o consumo nacional de diesel aumenta em aproximadamente **24,41 mil m³ por ano**.
 
-## 📊 Gráficos
+## Gráficos
 
 | Dispersão | Reta de Regressão |
 |:-:|:-:|
@@ -39,14 +39,14 @@ R² = 0,4307 (43,07%)  |  p-valor = 8,21 × 10⁻⁵
 |:-:|:-:|
 | ![Resíduos](graficos/03_residuos_regressao_simples.png) | ![Série](graficos/04_serie_temporal_diesel_pib.png) |
 
-## 🗂️ Fontes dos Dados
+## Dados
 
 | Variável | Descrição | Fonte |
 |---|---|---|
 | PIB do Agronegócio (R$ bi, deflacionado) | PIB-renda real em moeda de dez/2025 | [CEPEA/Esalq-USP](https://www.cepea.esalq.usp.br/br/pib-do-agronegocio-brasileiro.aspx) |
 | Consumo de Diesel (mil m³/ano) | Vendas totais das distribuidoras | [ANP (Dados Abertos)](https://www.gov.br/anp/) |
 
-## 🛠️ Como Executar
+## Como Executar
 
 ### Pré-requisitos
 - Python 3.8+
@@ -63,14 +63,14 @@ Rode o script unificado para recalcular a regressão, atualizar os gráficos da 
 python analise_econometrica.py
 ```
 
-## 📝 Principais Resultados
+## Resultados
 
-- O PIB agro **sozinho** explica **43,07%** da variação no consumo nacional de diesel.
-- A relação é altamente significativa estatisticamente ($p < 0,01$).
-- Os resíduos **passam com folga** no teste de normalidade de Shapiro-Wilk ($p = 0,7987$), validando os testes de hipótese do modelo.
+- O PIB agro **sozinho** explica **43,07%** da variação no consumo nacional de diesel;
+- A relação é altamente significativa estatisticamente ($p < 0,01$);
+- Os resíduos **passam com folga** no teste de normalidade de Shapiro-Wilk ($p = 0,7987$), validando os testes de hipótese do modelo;
 - Há indícios visuais de autocorrelação nos erros ao longo do tempo (limitação comum em séries temporais).
 
-## 📚 Referências Principais
+## Referências bibliográficas
 
 - BARROS, G. S. de C. et al. *PIB do Agronegócio Brasileiro: metodologia e estimação.* CEPEA/Esalq-USP, 2020.
 - CARDOSO, L. C. B.; JESUS, C. S. de. *Elasticidades da Demanda por Diesel no Brasil.* Revista Brasileira de Economia, 2017.
@@ -78,5 +78,3 @@ python analise_econometrica.py
 - GASQUES, J. G. et al. *Produtividade total dos fatores e transformações da agricultura brasileira.* Brasília: IPEA, 2010.
 
 ---
-
-> Trabalho desenvolvido para fins acadêmicos.
